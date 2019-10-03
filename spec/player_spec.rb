@@ -18,13 +18,6 @@ describe Player do
     end
   end
 
-  describe '#attack' do
-    it 'damages the oppnent' do
-      expect(duncan).to receive(:lose_health)
-      heli.attack(duncan)
-    end
-  end
-
   describe '#lose_health' do
     it 'reduces player 2s hp by 10 points' do
       expect { player.lose_health }.to change { player.hp }.by(-10)

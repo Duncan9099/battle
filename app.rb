@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
 
 class Battle < Sinatra::Base
 
@@ -18,12 +19,14 @@ class Battle < Sinatra::Base
   get '/attack' do
     @player1 = $player1
     @player2 = $player2
-    @player1.attack(@player2)
+    $game = Game.new(@player1, @player2)
+    $game.player1_attacks_player2
     erb :attack
   end
 
   get '/play' do
     @player1 = $player1
+    @game = $game
     @player2 = $player2
     @p2_hp = 100
     erb :play
