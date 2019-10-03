@@ -11,7 +11,7 @@ class Game
   end
 
   def switch_turns
-    
+
   end
 
 end

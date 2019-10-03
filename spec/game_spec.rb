@@ -23,4 +23,10 @@ let(:duncan) { double :duncan }
       game.attack(heli)
     end
   end
+
+  describe '#switch_turns' do
+    it 'switches turns after attack' do
+      expect()
+    end
+  end
 end
