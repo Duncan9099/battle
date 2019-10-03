@@ -10,4 +10,8 @@ class Game
     player.lose_health
   end
 
+  def switch_turns
+    
+  end
+
 end
