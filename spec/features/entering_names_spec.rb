@@ -1,4 +1,4 @@
-require "capybara/rspec"
+require "capybara"
 
 feature "Enter player names" do
   scenario "players fill out forms" do

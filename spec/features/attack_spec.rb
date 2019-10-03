@@ -11,7 +11,7 @@ feature "attack" do
     sign_in_and_play
     click_button 'Attack'
 
-    expect(page).to _not have_text("Duncan: 100HP")
+    expect(page).to_not have_text("Duncan: 100HP")
     expect(page).to have_text("Duncan: 90HP")
   end
 end
