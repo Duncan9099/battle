@@ -6,17 +6,21 @@ subject(:game) { described_class.new(heli, duncan) }
 let(:heli) { double :heli }
 let(:duncan) { double :duncan }
 
-  describe '#player1_attacks_player2' do
-    it 'damages player2' do
-    expect(duncan).to receive(:lose_health)
-    subject.player1_attacks_player2
-  end
- end
+  # describe '#initialize' do
+    # it 'initializes with two arguments' do
+    #   expect(described_class).to respond_to(:new).with(2).arguments
+    # end
+  # end
 
-   describe '#player2_attacks_player1' do
-     it 'damages player1' do
-       expect(heli).to receive(:lose_health)
-       subject.player2_attacks_player1
-     end
-   end
+  describe '#attack' do
+    it 'damages player2' do
+      expect(duncan).to receive(:lose_health)
+      game.attack(duncan)
+    end
+
+    it 'damages player1' do
+      expect(heli).to receive(:lose_health)
+      game.attack(heli)
+    end
+  end
 end
