@@ -23,10 +23,17 @@ class Game
 
   def game_over?
   @player1.dead? || @player2.dead?
-end
+  end
 
-def loser
-  @players.detect { |player| player.dead? }.name
-end
+  def loser
+    @players.detect { |player| player.dead? }.name
+  end
 
+  def self.create(player1, player2)
+    @game = Game.new(player1, player2)
+  end
+
+  def self.instance
+    @game
+  end
 end
