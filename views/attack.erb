@@ -1,10 +1,10 @@
 <center>
 <body>
-  <%= "#{$game.player1.name} attacks #{$game.player2.name}!" %> <br>
-  <%= $game.player2.name %>: <%= $game.player2.hp %>HP
+  <%= "#{@game.current_turn.name} attacks #{@game.opponent.name}!" %> <br>
+  <%= @game.opponent.name %>: <%= @game.opponent.hp %>HP
 </body>
 
-<form action="/play">
+<form action="/switch_turns">
   <input type="submit" value="Switch turns">
 </form>
 
