@@ -8,7 +8,16 @@ class Player
   end
 
   def lose_health
-    @hp -= 10
+    @hp -= random_number
   end
+
+  def dead?
+  @hp <= 0
+end
+
+private
+def random_number
+  Kernel.rand(1..100)
+end
 
 end

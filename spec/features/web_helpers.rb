@@ -6,8 +6,7 @@ def sign_in_and_play
   click_button "Submit"
 end
 
-def player_1_completed_turn
-  sign_in_and_play
+def completed_turn
   click_button 'Attack'
   click_button 'Switch turns'
 end

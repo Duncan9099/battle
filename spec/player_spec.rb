@@ -20,7 +20,17 @@ describe Player do
 
   describe '#lose_health' do
     it 'reduces player 2s hp by 10 points' do
+      allow(Kernel).to receive(:rand).and_return(10)
       expect { player.lose_health }.to change { player.hp }.by(-10)
     end
   end
+
+  describe '#dead?' do
+  it "returns true when hp is 0 or less" do
+    allow(Kernel).to receive(:rand).and_return(100)
+    duncan.lose_health
+
+    expect(duncan.dead?).to be true
+  end
+end
 end

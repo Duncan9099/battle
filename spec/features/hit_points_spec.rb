@@ -7,10 +7,9 @@ feature  "hit points" do
   end
 
   scenario "viewing player 1's hit points" do
-    # sign_in_and_play
-    # click_button 'Attack'
-    # click_button 'Switch turns'
-    player_1_completed_turn
+    sign_in_and_play
+    completed_turn
+    allow(Kernel).to receive(:rand).and_return(10)
     click_button 'Attack'
 
     expect(page).to have_text("John: 90HP")

@@ -1,4 +1,4 @@
-require '/Users/duncanskinner/Documents/makers_academy/course/week_3/challenges/weekly_challenge/battle/lib/player.rb'
+require_relative 'player'
 
 class Game
   attr_reader :player1, :player2, :current_turn, :opponent
@@ -20,5 +20,13 @@ class Game
     @current_turn = @players.first
     @opponent = @players.last
   end
+
+  def game_over?
+  @player1.dead? || @player2.dead?
+end
+
+def loser
+  @players.detect { |player| player.dead? }.name
+end
 
 end
